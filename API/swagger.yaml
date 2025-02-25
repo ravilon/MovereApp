@@ -1,0 +1,36 @@
+swagger: '2.0'
+info:
+  title: API Udemos
+  version: "1.0"
+paths:
+  /api/calculate:
+    post:
+      summary: Perform calculation
+      description: Endpoint to perform a calculation based on the provided data.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Calculation details
+          required: true
+          schema:
+            type: object
+            properties:
+              calculation:
+                type: string
+              params:
+                type: object
+                additionalProperties:
+                  type: number
+      responses:
+        200:
+          description: Successful operation
+        400:
+          description: Invalid input data
+        404:
+          description: Calculation not found
+        500:
+          description: Server error
