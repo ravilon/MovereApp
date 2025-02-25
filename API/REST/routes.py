@@ -51,7 +51,7 @@ def calculate():
             return jsonify({"error": "Invalid input data"}), 400
 
         # Dynamically import the correct module
-        module_name = f"app.calculations.{calculation_name}"
+        module_name = f"REST.calculations.{calculation_name}"
         module = importlib.import_module(module_name)
 
         # Assume that each calculation module has a `calculate` method
