@@ -4,12 +4,12 @@ import importlib  # Used for dynamic imports
 
 blueprint = Blueprint('api', __name__)
 
-# Define your route for calculations
-@blueprint.route('/api/calculate', methods=['POST'])
+# Define your route for functions
+@blueprint.route('/api/functions', methods=['POST'])
 @swag_from({
     'responses': {
         200: {
-            'description': 'Calculation result',
+            'description': 'Function result',
             'schema': {
                 'type': 'object',
                 'properties': {
@@ -21,7 +21,7 @@ blueprint = Blueprint('api', __name__)
             'description': 'Invalid input data'
         },
         404: {
-            'description': "Calculation not found"
+            'description': "Function not found"
         }
     },
     'parameters': [
@@ -40,18 +40,18 @@ blueprint = Blueprint('api', __name__)
     ]
 })
 def calculate():
-    global calculation_name
+    global function_name
     try:
         # Get the calculation name and parameters from the request JSON
         data = request.get_json()
-        calculation_name = data.get('calculation')
+        function_name = data.get('function')
         params = data.get('params')
 
-        if not calculation_name or not isinstance(params, dict):
+        if not function_name or not isinstance(params, dict):
             return jsonify({"error": "Invalid input data"}), 400
 
         # Dynamically import the correct module
-        module_name = f"REST.calculations.{calculation_name}"
+        module_name = f"REST.functions.{function_name}"
         module = importlib.import_module(module_name)
 
         # Assume that each calculation module has a `calculate` method
@@ -60,7 +60,7 @@ def calculate():
         return jsonify({"result": result})
 
     except ModuleNotFoundError:
-        return jsonify({"error": f"Calculation '{calculation_name}' not found"}), 404
+        return jsonify({"error": f"Function '{function_name}' not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
