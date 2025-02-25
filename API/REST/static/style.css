@@ -1,0 +1,63 @@
+/* Estilo geral */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Cabeçalho */
+h1 {
+    color: #2c3e50;
+    margin-top: 50px;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+/* Lista de endpoints */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    background: #2980b9;
+    cursor: pointer;
+}
+
+/* Parágrafos */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Link da documentação */
+a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

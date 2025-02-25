@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, render_template
 from flasgger import swag_from
 import importlib  # Used for dynamic imports
 
@@ -6,6 +6,7 @@ blueprint = Blueprint('api', __name__)
 
 # Define your route for functions
 @blueprint.route('/api/functions', methods=['POST'])
+
 @swag_from({
     'responses': {
         200: {
@@ -32,13 +33,14 @@ blueprint = Blueprint('api', __name__)
             'schema': {
                 'type': 'object',
                 'properties': {
-                    'calculation': {'type': 'string'},
+                    'function': {'type': 'string'},
                     'params': {'type': 'object'}
                 }
             }
         }
     ]
 })
+
 def calculate():
     global function_name
     try:
@@ -64,3 +66,6 @@ def calculate():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@blueprint.route('/')
+def home():
+    return render_template('index.html')

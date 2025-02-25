@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: API Udemos
+  title: API Movere
   version: "1.0"
 paths:
   /api/calculate:
@@ -14,12 +14,12 @@ paths:
       parameters:
         - in: body
           name: body
-          description: Calculation details
+          description: Function details
           required: true
           schema:
             type: object
             properties:
-              calculation:
+              functions:
                 type: string
               params:
                 type: object
