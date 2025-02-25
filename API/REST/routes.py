@@ -5,7 +5,7 @@ import importlib  # Used for dynamic imports
 blueprint = Blueprint('api', __name__)
 
 # Define your route for calculations
-@bp.route('/api/calculate', methods=['POST'])
+@blueprint.route('/api/calculate', methods=['POST'])
 @swag_from({
     'responses': {
         200: {
