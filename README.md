@@ -16,8 +16,8 @@ Passo a Passo para Configuração do Ambiente Local
  	No Windows (cmd ou PowerShell):
 
 	### comando bash
-	*python -m venv venv
-	*venv\Scripts\activate
+	python -m venv venv
+	venv\Scripts\activate
 	No Linux/macOS:
 
 	### comando bash
