@@ -1,0 +1,16 @@
+{
+    "factor": {
+       "Autonomia": {
+            "collection": "BPNSS",    
+            "columns": ["bpnss1", "bpnss4", "bpnss8", "bpnss11", "bpnss14", "bpnss17", "bpnss20"]
+       },
+       "Competencia": {
+            "collection": "BPNSS",    
+            "columns": ["8-bpnss3", "bpnss5", "bpnss10", "bpnss13", "8-bpnss15", "8-bpnss19"]
+       },
+       "Afinidade": {
+            "collection": "BPNSS",    
+            "columns": ["bpnss2","bpnss6","8-bpnss7","bpnss9","bpnss12","8-bpnss16","8-bpnss18","bpnss21"]
+       }
+    }
+}
