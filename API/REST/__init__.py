@@ -15,14 +15,4 @@ def create_app():
     # Initialize Swagger
     Swagger(app)
     
-    """
-    # Test DB
-    # db = get_db()
-    # collection_ref = db.collection("users")
-    # docs = collection_ref.stream()
-    for doc in docs:
-        print(f"Document ID: {doc.id}")
-        print(f"Data: {doc.to_dict()}")
-    """ 
-    
     return app
